@@ -1,0 +1,503 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    About Us
+
+{% endblock title %}
+
+{% block body %}
+
+    <!-- ========================
+    page title 
+    =========================== -->
+    <section class="page-title page-title-layout1 bg-overlay bg-parallax" style="background-size: auto; padding-bottom:300px;">
+        <div class="bg-img"><img src="{% static "product/assets/images/about/ATHENA2.jpg"%}" alt="background" style="weight: 1472px, height:494px"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                <h1 class="pagetitle__heading">Athena Telecommunicatio</h1>
+                <a href="{% url 'product:product_list' %}" class="btn btn__white">
+                    <i class="icon-arrow-right1"></i><span>Our Products</span>
+                </a>
+                </div><!-- /.col-xl-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.page-title -->
+
+    <!-- ========================
+    About Layout 2
+    =========================== -->
+    <section class="about-layout2 pb-40">
+        <div class="container">
+            <div class="row mb-50 align-items-center">
+            {% comment %} <div class="col-sm-12 col-md-12 col-lg-6"> {% endcomment %}
+                <div class="heading-layout2 mb-20">
+                <h2 class="heading__subtitle">Leading provider of reliable and efficient communication solutions.</h2>
+                <h3 class="heading__title"> connect people and businesses across the globe, enabling them to communicate seamlessly and effectively.
+                </h3>
+                </div><!-- /heading -->
+            {% comment %} </div><!-- /.col-lg-6 --> {% endcomment %}
+            {% comment %} <div class="col-sm-12 col-md-12 col-lg-5 offset-lg-1 d-flex justify-content-end counters-wrapper">
+                <!-- counter item #1 -->
+                <div class="counter-item">
+                <h4 class="counter">6,154</h4>
+                <p class="counter-item__desc">Projects And Residentials Completed in 2020</p>
+                </div>
+                <!-- counter item #2 -->
+                <div class="counter-item">
+                <h4 class="counter">2,512</h4>
+                <p class="counter-item__desc">Qualified Employees And Workers With Us</p>
+                </div>
+            </div><!-- /.col-lg-6 --> {% endcomment %}
+            </div><!-- /.row -->
+            <div class="row">
+            {% comment %} <div class="col-sm-12 col-md-12 col-lg-6"> {% endcomment %}
+                <p class="heading__desc mb-30">With years of experience in the telecommunication industry, 
+                    we have developed a comprehensive range of solutions that meet the diverse needs of our clients. 
+                    From high-speed broadband internet to voice and video conferencing, data transfer, and more, 
+                    we offer customized solutions that are tailored to the specific requirements of each client.
+                    <br>
+                    Importance of reliable and secure communication, that’s why we have invested in the latest technology and equipment, 
+                    ensuring that our clients receive the highest level of service and performance. 
+                </p>
+                <p class="heading__desc">We are committed to innovation, quality, and reliability, and our partnerships with leading telecommunication 
+                    providers reflect this commitment. Our solutions are backed by the most advanced and reliable technology available, 
+                    ensuring that our clients have access to the best possible communication solutions.
+                    <br>
+                    We work closely with our clients to understand their unique requirements and provide customized
+                    solutions that meet their needs and exceed their expectations. Contact us today to learn more about 
+                    how we can help you stay connected and stay ahead.
+                </p>
+                <ul class="list-items list-unstyled mb-20 mt-40">
+                <li>Reliable communication solutions</li>
+                <li>Secure communication</li>
+                <li>Global connectivity</li>
+                <li>Tailored services</li>
+                <li>Cutting-edge technology</li>
+                <li>24/7 support</li>
+                <li>Exceptional value</li>
+                <li>Innovation and quality</li>
+                </ul>
+                {% comment %} <a href="projects-grid.html" class="btn btn__primary btn__lg mb-40">
+                <i class="icon-arrow-right1"></i><span>More About Us</span>
+                </a> {% endcomment %}
+            {% comment %} </div><!-- /.col-lg-6 --> {% endcomment %}
+            {% comment %} <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="about__img">
+                <img src="assets/images/about/1.jpg" alt="about" class="img-fluid">
+                <div class="cta-banner">
+                    <div class="cta-banner__icon">
+                    <i class="icon-hard-hat"></i>
+                    </div>
+                    <h5 class="cta-banner__title ">Join Us, Be Part Of Our Team!</h5>
+                    <a href="#" class="btn btn__primary btn__link"><i class="icon-arrow-right1"></i></a>
+                </div><!-- /.cta-banner -->
+                </div><!-- /.about-img -->
+            </div><!-- /.col-lg-6 --> {% endcomment %}
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.About Layout 2 -->
+
+    <!-- =========================
+        Banner layout 1
+    =========================== -->
+    <section class="banner-layout1 pb-100 bg-secondary">
+    <div class="container-fluid col-padding-0">
+        <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 background-banner">
+            <div class="bg-img">
+            <img src="{% static "product/assets/images/about/Nima-Baheri-Photo-1_web.jpg"%}" alt="banner">
+            </div>
+            {% comment %} <div class="cta-banner">
+                <h4 class="cta-banner__subtitle ">40</h4>
+                <h5 class="cta-banner__title ">Years Of Experience!</h5>
+                <a href="#" class="btn btn__primary btn__link"><i class="icon-arrow-right1"></i></a>
+            </div><!-- /.cta-banner -->
+            <div class="video__box">
+                <a class="video__btn video__btn-white popup-video" href="https://www.youtube.com/watch?v=nrJtHemSPW4">
+                    <div class="video__player">
+                    <span class="video__player-animation"></span>
+                    <span class="video__player-animation video__player-animation-2"></span>
+                    <i class="fa fa-play"></i> 
+                    </div>
+                </a>
+                <div class="video__box-text">
+                    <span class="color-white">Watch Video!</span>
+                </div> 
+            </div><!-- /.video__box --> {% endcomment %}
+        </div><!-- /.col-xl-6 -->
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+            <div class="inner-padding py-0">
+            <div class="heading-layout2 heading-light mb-40">
+                <h3 class="heading__title">Nima Baheri, CEO</h3>
+                <p class="heading__desc">As the CEO & Founder of Athena Telecom company, I am proud to lead a team of dedicated professionals 
+                    who are committed to providing the best communication solutions for our clients. Our mission is to connect people and 
+                    businesses seamlessly and efficiently across the globe, and we work tirelessly to achieve this goal.
+                    <br>
+                    In today’s fast-paced and ever-changing world, communication is essential for success and growth. 
+                    We recognize the importance of staying ahead of the curve, and we invest in the latest technology and equipment to 
+                    ensure that our clients have access to the best possible communication solutions.
+                </p>
+            </div><!-- /.heading -->
+            <div class="d-flex flex-wrap justify-content-between fancybox-wrapper">
+                <!-- fancybox item #1 -->
+                <div class="fancybox-item">
+                <div class="fancybox-item__icon">
+                    <i class="icon-hard-hat"></i>
+                </div><!-- /.fancybox-icon -->
+                <div class="fancybox-item__content">
+                    <h4 class="fancybox-item__title">Experienced Engineers Team</h4>
+                </div><!-- /.fancybox-content -->
+                </div><!-- /.fancybox-item -->
+                <!-- fancybox item #2 -->
+                <div class="fancybox-item">
+                <div class="fancybox-item__icon">
+                    <i class="icon-gloves"></i>
+                </div><!-- /.fancybox-icon -->
+                <div class="fancybox-item__content">
+                    <h4 class="fancybox-item__title">24/7 Assist Our Clients</h4>
+                </div><!-- /.fancybox-content -->
+                </div><!-- /.col-lg-4 -->
+                <!-- fancybox item #3 -->
+                <div class="fancybox-item">
+                <div class="fancybox-item__icon">
+                    <i class="icon-ladder"></i>
+                </div><!-- /.fancybox-icon -->
+                <div class="fancybox-item__content">
+                    <h4 class="fancybox-item__title">Grow And Expand Our Services</h4>
+                </div><!-- /.fancybox-content -->
+                </div><!-- /.fancybox-item -->
+            </div><!-- /.row -->
+            <p class="color-white mb-20">
+                Thank you for choosing our telecommunication company as your partner for communication solutions. 
+                We look forward to continuing to serve you and to help you achieve your goals.
+            </p>
+            <img src="{% static "product/assets/images/about/singnture.png"%}" alt="singnture">
+            </div>
+        </div><!-- /.col-xl-6 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+    </section><!-- /.Banner layout 1 -->
+
+    <!-- ========================
+    About Layout 2
+    =========================== -->
+    <section class="about-layout2 pb-40">
+        <div class="container">
+            <div class="row mb-50 align-items-center">
+                <div class="heading-layout2 mb-20">
+                    <h2 class="heading__subtitle">Vision</h2>
+                    <h3 class="heading__title"> 
+                        leading provider of innovative and sustainable communication solutions that drive progress and growth 
+                        for our clients and the communities in which we operate.
+                    </h3>
+                </div><!-- /heading -->
+            {% comment %} 
+                <div class="col-sm-12 col-md-12 col-lg-5 offset-lg-1 d-flex justify-content-end counters-wrapper">
+                    <!-- counter item #1 -->
+                    <div class="counter-item">
+                        <h4 class="counter">6,154</h4>
+                        <p class="counter-item__desc">Projects And Residentials Completed in 2020</p>
+                    </div>
+                    <!-- counter item #2 -->
+                    <div class="counter-item">
+                        <h4 class="counter">2,512</h4>
+                    <p class="counter-item__desc">Qualified Employees And Workers With Us</p>
+                    </div>
+                </div><!-- /.col-lg-6 --> 
+            {% endcomment %}
+            </div><!-- /.row -->
+            <div class="row">
+                <p class="heading__desc mb-30">
+                    We envision a world where reliable and efficient communication is accessible to all, regardless of location or 
+                    circumstances. We strive to break down communication barriers and enable people and businesses to connect 
+                    seamlessly and effectively across the globe.
+                    At our telecommunication company, we are committed to driving innovation and pushing the boundaries of what is possible. 
+                    We seek to anticipate and meet the evolving needs of our clients, delivering customized solutions that are tailored to their specific requirements.
+                    <br>
+                    We are also committed to sustainability and social responsibility, striving to reduce our environmental impact 
+                    through sustainable practices and to contribute to the communities in which we operate.
+                    Our goal is to be recognized as a leader in the telecommunication industry, known for our innovation, 
+                    quality, and reliability. We will achieve this by investing in the latest technology and equipment, partnering with 
+                    leading telecommunication providers, and attracting and retaining the best talent in the industry. 
+                </p>
+                <p class="heading__desc">
+                    In summary, our vision is to be a leading provider of innovative and sustainable communication solutions that drive 
+                    progress and growth for our clients and the communities in which we operate. We are committed to breaking down 
+                    communication barriers and enabling people and businesses to connect seamlessly and effectively across the globe.
+                </p>
+                {% comment %} 
+                    <a href="projects-grid.html" class="btn btn__primary btn__lg mb-40">
+                    <i class="icon-arrow-right1"></i><span>More About Us</span>
+                    </a>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="about__img">
+                        <img src="assets/images/about/1.jpg" alt="about" class="img-fluid">
+                        <div class="cta-banner">
+                            <div class="cta-banner__icon">
+                            <i class="icon-hard-hat"></i>
+                            </div>
+                            <h5 class="cta-banner__title ">Join Us, Be Part Of Our Team!</h5>
+                            <a href="#" class="btn btn__primary btn__link"><i class="icon-arrow-right1"></i></a>
+                        </div><!-- /.cta-banner -->
+                        </div><!-- /.about-img -->
+                    </div><!-- /.col-lg-6 --> 
+                {% endcomment %}
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.About Layout 2 -->
+
+    <!-- ======================
+    Work Process 
+    ========================= -->
+    <section class="work-process pb-200">
+        <div class="bg-img"><img src="{% static "product/assets/images/backgrounds/1.jpg"%}" alt="background"></div>
+        <div class="container">
+            <div class="row heading heading-layout3 mb-80">
+            <div class="col-sm-12 col-md-12 col-lg-3">
+                <h2 class="heading__subtitle">What We Do!!</h2>
+            </div><!-- /.col-lg-6 -->
+            <div class="col-sm-12 col-md-12 col-lg-9">
+                <h3 class="heading__title color-white">Provides communication solutions to businesses, governments, and individuals around the world. Our services include:</h3>
+            </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            <div class="row process-items-wrapper">
+            <!-- process Item #1 -->
+            <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="process-item">
+                <div class="process-item__icon">
+                    <i><img style="max-width: 80px;" src="data:image/png;base64,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"></i>
+                </div><!-- /.process-item__icon -->
+                <h4 class="process-item__title">Satellite Communication</h4>
+                <p class="process-item__desc">Step 01</p>
+                </div><!-- /.process-item -->
+            </div><!-- /.col-lg-2 -->
+            <!-- process Item #2 -->
+            <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="process-item">
+                <div class="process-item__icon">
+                    <i class="fas fa-bars"></i>
+                </div><!-- /.process-item__icon -->
+                <h4 class="process-item__title">Network Services</h4>
+                <p class="process-item__desc">Step 02</p>
+                </div><!-- /.process-item -->
+            </div><!-- /.col-lg-2 -->
+            <!-- process Item #3 -->
+            <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="process-item">
+                <div class="process-item__icon">
+                    <i class="fas fa-cloud"></i>
+                </div><!-- /.process-item__icon -->
+                <h4 class="process-item__title">Internet Services</h4>
+                <p class="process-item__desc">Step 03</p>
+                </div><!-- /.process-item -->
+            </div><!-- /.col-lg-2 -->
+            <!-- process Item #4 -->
+            <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="process-item">
+                <div class="process-item__icon">
+                    <i class="fas fa-microphone"></i>
+                </div><!-- /.process-item__icon -->
+                <h4 class="process-item__title">Voice Services</h4>
+                <p class="process-item__desc">Step 04</p>
+                </div><!-- /.process-item -->
+            </div><!-- /.col-lg-2 -->
+            <!-- process Item #5 -->
+            <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="process-item">
+                <div class="process-item__icon">
+                    <i class="material-icons" style="font-size: 64px;">computer</i>
+                </div><!-- /.process-item__icon -->
+                <h4 class="process-item__title">IoT and M2M Solutions</h4>
+                <p class="process-item__desc">Step 05</p>
+                </div><!-- /.process-item -->
+            </div><!-- /.col-lg-2 -->
+            <!-- process Item #6 -->
+            <div class="col-sm-6 col-md-6 col-lg-2">
+                <div class="process-item">
+                <div class="process-item__icon">
+                    <i class="fas fa-briefcase"></i>
+                </div><!-- /.process-item__icon -->
+                <h4 class="process-item__title">Consulting Services</h4>
+                <p class="process-item__desc">Step 06</p>
+                </div><!-- /.process-item -->
+            </div><!-- /.col-lg-2 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.Work Process -->
+
+    <!-- ==========================
+        contact layout 1
+    =========================== -->
+    <section class="contact-layout1 mt--140 py-0">
+        <div class="container">
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="contact-panel">
+                    <div class="col-sm-12">
+                        <h4 class="contact-panel__title">Mission</h4>
+                        <p class="contact-panel__desc mb-40">
+                            The mission of our telecommunication company is to provide reliable and efficient communication solutions that enable people and businesses to connect seamlessly and effectively across the globe.
+                            <br>
+                            We believe that communication is essential for progress and growth, and our goal is to connect people and businesses in even the most remote and challenging locations. We are committed to delivering the highest level of service and performance to our clients, ensuring that they stay connected and stay ahead.
+                            <br>
+                            At our telecommunication company, we are dedicated to innovation, quality, and reliability. We invest in the latest technology and equipment, and we partner with leading telecommunication providers to ensure that our clients have access to the best possible communication solutions.
+                            <br>
+                            We are also committed to sustainability and social responsibility. We strive to reduce our environmental impact through sustainable practices and to contribute to the communities in which we operate.
+                            <br>
+                            Our team of experienced engineers and support staff is available 24/7 to provide technical support and assistance, ensuring that our clients receive the highest level of service and satisfaction.
+                            <br>
+                            In summary, our mission is to provide reliable, efficient, and sustainable communication solutions that connect people and businesses across the globe and contribute to their success and growth.
+                        </p>
+                    </div>
+                {% comment %} 
+                    <div class="contact-panel__banner d-flex align-items-end mb-20">
+                        <div class="bg-img"><img src="assets/images/contact/1.jpg" alt="banner"></div>
+                        <div class="contact-panel__banner__inner">
+                        <h4 class="contact-panel__banner__title">Leading Way In Building & Civil Construction!</h4>
+                        <p class="contact-panel__banner__desc">Yet those embrace change are thriving, building bigger, better,
+                            faster & stronger products than ever before!</p>
+                        <img src="assets/images/about/singnture2.png" alt="singnture">
+                        </div>
+                    </div><!-- /.contact-panel__banner -->
+                    <form class="contact-panel__form" method="post" action="assets/php/contact.php" id="contactForm">
+                        <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group"><input type="text" class="form-control" placeholder="Name" id="contact-name"
+                                name="contact-name" required></div>
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group"><input type="email" class="form-control" placeholder="Email"
+                                id="contact-email" name="contact-email" required></div>
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group"><input type="text" class="form-control" placeholder="Phone"
+                                id="contact-Phone" name="contact-phone" required></div>
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                            <select class="form-control">
+                                <option value="0">Select Your Service</option>
+                                <option value="1">consulting</option>
+                                <option value="2">constructions</option>
+                            </select>
+                            </div>
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                            <textarea class="form-control" placeholder="Additional Details!" id="contact-messgae"
+                                name="contact-messgae" required></textarea>
+                            </div>
+                        </div><!-- /.col-lg-12 -->
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <button type="submit" class="btn btn__secondary btn__block ">Submit Request </button>
+                            <div class="contact-result"></div>
+                        </div><!-- /.col-lg-12 -->
+                        </div><!-- /.row -->
+                    </form> 
+                {% endcomment %}
+                </div><!-- /.contact__panel -->
+            </div><!-- /.col-lg-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.contact layout 1 -->
+
+    {% comment %} 
+        <!-- ======================
+        Blog Grid
+        ========================= -->
+        <section class="blog-grid pb-50">
+        <div class="container">
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3">
+                <div class="heading text-center mb-40">
+                <h2 class="heading__subtitle">Latest Articles Updated Daily</h2>
+                <h3 class="heading__title">Insight, Industry Trends, Top <br> News Headlines.</h3>
+                </div><!-- /.heading -->
+            </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            <div class="row">
+            <!-- Blog Item #1 -->
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="post-item">
+                <div class="post-item__img">
+                    <a href="blog-single-post.html">
+                    <img src="assets/images/blog/grid/1.jpg" alt="blog image">
+                    </a>
+                    <div class="post-item__meta__cat">
+                    <a href="#">Construction</a>
+                    </div><!-- /.blog-meta-cat -->
+                </div><!-- /.blog-img -->
+                <div class="post-item__content">
+                    <span class="post-item__meta__date">Jan 20, 2020</span>
+                    <h4 class="post-item__title"><a href="#">Importers achieve cost savings through the First Sale rule!</a>
+                    </h4>
+                    <p class="post-item__desc">The trade war currently ensuing between the US and several nations around the
+                    globe, most fiercely with China, shows no signs of the first set of tariffs levied against solar...
+                    </p>
+                    <a href="blog-single-post.html" class="btn btn__secondary btn__link">
+                    <i class="icon-arrow-right1"></i>
+                    <span>Read More</span>
+                    </a>
+                </div><!-- /.blog-content -->
+                </div><!-- /.post-item -->
+            </div><!-- /.col-lg-4 -->
+            <!-- Blog Item #2 -->
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="post-item">
+                <div class="post-item__img">
+                    <a href="blog-single-post.html">
+                    <img src="assets/images/blog/grid/2.jpg" alt="blog image">
+                    </a>
+                    <div class="post-item__meta__cat">
+                    <a href="#">Industry</a>
+                    </div><!-- /.blog-meta-cat -->
+                </div><!-- /.blog-img -->
+                <div class="post-item__content">
+                    <span class="post-item__meta__date">Oct 18, 2020</span>
+                    <h4 class="post-item__title"><a href="#">Cargo flow through better supply chain visibility, control.</a>
+                    </h4>
+                    <p class="post-item__desc">Global provider connected products for consumers, and enterprises worldwide,
+                    supply chain control is everything, provide visibility and traceability needed for...</p>
+                    <a href="blog-single-post.html" class="btn btn__secondary btn__link">
+                    <i class="icon-arrow-right1"></i>
+                    <span>Read More</span>
+                    </a>
+                </div><!-- /.blog-content -->
+                </div><!-- /.post-item -->
+            </div><!-- /.col-lg-4 -->
+            <!-- Blog Item #3 -->
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="post-item">
+                <div class="post-item__img">
+                    <a href="blog-single-post.html">
+                    <img src="assets/images/blog/grid/3.jpg" alt="blog image">
+                    </a>
+                    <div class="post-item__meta__cat">
+                    <a href="#">Engineering</a>
+                    </div><!-- /.blog-meta-cat -->
+                </div><!-- /.blog-img -->
+                <div class="post-item__content">
+                    <span class="post-item__meta__date">Jan 20, 2020</span>
+                    <h4 class="post-item__title"><a href="#">Importance of specialized focus in portfolio, Oil & Gas</a>
+                    </h4>
+                    <p class="post-item__desc">Our team provides highly skilled & experienced portfolio managers who know
+                    the
+                    intricacies of this vertical and focus on providing innovative solutions in Oil & Gas...</p>
+                    <a href="blog-single-post.html" class="btn btn__secondary btn__link">
+                    <i class="icon-arrow-right1"></i>
+                    <span>Read More</span>
+                    </a>
+                </div><!-- /.blog-content -->
+                </div><!-- /.post-item -->
+            </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+        </section><!-- /.blog Grid --> 
+    {% endcomment %}
+
+
+{% endblock %}

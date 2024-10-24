@@ -1,0 +1,94 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block title %}
+
+  Blog Detail
+
+{% endblock title %}
+
+{% block header %}
+
+  {% include "header.html" %}
+
+{% endblock header %}
+
+{% block body %}
+
+  <section class="blog blog-single pt-100 pb-40">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-4">
+            <aside class="sidebar mb-30">
+              <div class="widget widget-search">
+                  <h5 class="widget__title">Search</h5>
+                  <div class="widget__content">
+                      <form class="widget__form-search" action="{% url 'blog:article_list' %}">
+                          <input name="search" type="text" class="form-control" placeholder="Search...">
+                          <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                      </form>
+                  </div><!-- /.widget-content -->
+              </div><!-- /.widget-search -->        
+              <div class="widget widget-posts">
+                <h5 class="widget__title">Recent Posts</h5>
+                <div class="widget__content">
+                  <div class="slick-carousel" data-slick='{"slidesToShow": 1, "arrows": false, "dots": true}'>
+                    <!-- post item #1 -->
+                    {% for article in recent %}
+                      <div class="widget-post-item">
+                        <div class="widget-post__img">
+                          <a href="{% url 'blog:article_detail' article.slug %}"><img src="{{article.thumbnail.url}}" alt="thumb"></a>
+                        </div><!-- /.widget-post-img -->
+                        <div class="widget-post__content">
+                          <span class="widget-post__date">{{article.publish}}</span>
+                          <h6 class="widget-post__title"><a href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
+                          </h6>
+                        </div><!-- /.widget-post-content -->
+                      </div><!-- /.widget-post-item -->
+                    {% endfor %}
+                    <!-- post item #2 -->
+                    
+                  </div><!-- /.carousel -->
+                </div><!-- /.widget-content -->
+              </div><!-- /.widget-posts -->
+            </aside><!-- /.sidebar -->
+          </div><!-- /.col-lg-4 -->
+          <div class="col-sm-12 col-md-12 col-lg-8">
+            <div class="post-item mb-0">
+              <div class="post-item__meta d-flex align-items-center">
+                <div class="post-item__meta__cat">
+                  <a href="#">{{object.category_to_str}}</a>
+                </div><!-- /.blog-meta-cat -->
+                <span class="post-item__meta__date">{{object.publish}}</span>
+              </div><!-- /.blog-meta -->
+              <h1 class="post-item__title">{{object.title}}</h1>
+              <div class="post-item__img">
+                <a href="#">
+                  <img src="{{object.thumbnail.url}}" alt="blog image">
+                </a>
+              </div><!-- /.entry-img -->
+              <div class="post-item__content">
+                <div class="post-item__desc">
+                  {{object.description|safe}}
+                </div><!-- /.blog-desc -->
+              </div><!-- /.entry-content -->
+            </div><!-- /.post-item -->
+            <div class="blog-share d-flex flex-wrap justify-content-between mb-30 mt-20">
+            
+            </div><!-- /.blog-share -->
+            <div class="blog-tags d-flex flex-wrap">
+              <strong class="mr-20 color-heading">Tags:</strong>
+              <ul class="list-unstyled d-flex flex-wrap mb-40">
+                {% for tag in tags %}
+                  <li><a href="#">{{tag.title}}</a></li>
+                {% endfor %}
+              </ul>
+            </div><!-- /.blog-tags -->
+
+          </div><!-- /.col-lg-8 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+  </section><!-- /.blog Single -->
+
+{% endblock %}

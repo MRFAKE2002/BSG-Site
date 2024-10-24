@@ -1,0 +1,287 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Products
+
+{% endblock title %}
+
+{% block front_css %}
+
+	<!-- fonts files -->
+	<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	
+	
+	<!-- Font awesome css -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	
+	<!-- Owl carousel css -->
+	<link rel="stylesheet" href="{% static "cart/css/owl.carousel.css"%}">
+	<link rel="stylesheet" href="{% static "cart/css/owl.transitions.css"%}">
+	<link rel="stylesheet" href="{% static "cart/css/owl.theme.css"%}">
+	
+	<!-- bx-slider css -->
+	<link rel="stylesheet" href="{% static "cart/css/jquery.bxslider.css"%}">
+	
+	<!-- bootstrap select css -->
+	<link rel="stylesheet" href="{% static "cart/css/bootstrap-select.min.css"%}">
+	
+	<!-- lightbox css -->
+	<link rel="stylesheet" href="{% static "cart/css/lightbox.css"%}">
+	
+	<!-- Revolution slider css -->
+	<link href="{% static "cart/js/rs-plugin/css/settings.css"%}" rel="stylesheet" />
+	
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" href="{% static "cart/css/bootstrap.css"%}">
+	
+	<!-- Custom css -->
+	<link rel="stylesheet" href="{% static "cart/css/style.css"%}">
+	<link rel="stylesheet" href="{% static "cart/css/responsive.css"%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow:400,500,600,700%7cHeebo:400,500,700&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+    <link rel="stylesheet" href="{% static "product/assets/css/libraries.css"%}">
+    <link rel="stylesheet" href="{% static "product/assets/css/style.css"%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+{% endblock front_css %}
+
+{% block body %}
+
+    <!-- ========================
+    page title 
+    =========================== -->
+    <section class="page-title page-title-layout5 bg-overlay bg-parallax text-center">
+        <div class="bg-img"><img src="{% static "product/assets/images/page-titles/Product-and-Service-Banner-4-4-Antenna.jpg"%}" alt="background"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 offset-xl-3">
+                <h1 class="pagetitle__heading">High Speed, Low Latency & Global Connectivity</h1>
+                {% comment %} <nav>
+                    <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Products</li>
+                    </ol>
+                </nav> {% endcomment %}
+                </div><!-- /.col-xl-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.page-title -->
+
+    {% comment %} 
+        <!-- =========================== 
+        portfolio grid 
+        ============================= -->
+        <section class="portfolio-grid">
+        <div class="container">
+            <div class="row">
+                <form class="header-search__form" method='post' action="{% url 'product:search' %}">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Search..." name="search" class="form-control">
+                    <button type='submit' class="header-search__btn"><i class="fa fa-search"></i></button>
+                </form>
+            </div><!-- /.row -->
+            <div id="filtered-items-wrap" class="row">
+                <form method="get">
+                    {{ filter.form.as_p }}
+                    <input type="submit" />
+                </form>
+                {% for obj in filter.qs %}
+                    {{ obj.name }} - ${{ obj.price }}<br />
+                {% endfor %}
+                
+                <!-- portfolio item -->
+                {% for product in products %}
+                    <div class="col-sm-6 col-md-3 col-lg-3 mix filter-renovations">
+                        <div class="portfolio-item">
+                        <div class="portfolio-item__img">
+                            <img src="{{ product.image.url}}" style= alt="portfolio img">
+                        </div><!-- /.portfolio-img -->
+                        <div class="portfolio-item__hover">
+                            <div class="portfolio-item__content">
+                            <h4 class="portfolio-item__title"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h4>
+                            <div class="portfolio-item__cat">
+                                <a href="{{ product.get_absolute_url }}">{{ product.brand }}</a><a href="{{ product.get_absolute_url }}">{{ product.type }}</a>
+                            </div><!-- /.portfolio-cat -->
+                            </div><!-- /.portfolio-content -->
+                        </div><!-- /.portfolio-item__hover -->
+                        </div><!-- /.portfolio-item -->
+                    </div><!-- /.col-lg-4 -->
+                {% endfor %}
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    <button type="button" class="btn btn__primary btn__bordered btn__loadMore loadMoreportfolio">
+                    <i class="icon-arrow-right1"></i><span>Explore All</span>
+                    </button>
+                </div><!-- /.col-lg-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+        </section><!-- /.portfolio grid --> 
+    {% endcomment %}
+{% comment %} 
+    <div class="filter_area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-8 col-xs-12">
+					<div class="filter_box_left">
+						<div class="s_results">
+							<p><span>|</span> showing 1-12 of 30 results</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-4 col-xs-12">
+					<div class="filter_box_right">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">sort by newness <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Top Seller </a></li>
+                                <li><a href="#">Most Popular</a></li>
+                                <li><a href="#">Alphabetically</a></li>                        
+                                <li><a href="#">Older First</a></li>                        
+                            </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> {% endcomment %}
+	<section class="main_category_area">
+		<div class="container">
+            <div class="row">
+                <form class="header-search__form" action="{% url 'product:product_list' %}">
+                    <input type="text" placeholder="Search..." name="search" class="form-control">
+                    <button type='submit' class="header-search__btn"><i class="fa fa-search"></i></button>
+                </form>
+            </div><!-- /.row -->
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<div class="main_category_left">
+                        <!-- List Filter -->
+                        <form method="get">
+                            {% for field in filter.form %}
+                            <div class="form-group">
+                                <label for="id_{{field.name}}">{{field.label}}</label>
+                                {{field}}
+                            </div>
+                            {% endfor%}
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </form>
+
+                        {% comment %} <form method="get" action="">
+                            <div class="panel-group" id="home-accordion" role="tablist" aria-multiselectable="true">
+                                {% for field in filter.form %}
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#home-accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            {{ field.label }}
+                                            <span class="floatright"><i class="fa fa-minus"></i></span>
+                                            </a>
+                                        </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                <ul id="c_tab1">
+                                                    {% for item in field %}
+                                                        <li><a href="">{{ item }}</a></li>
+                                                    
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor%}                                            
+                            </div>
+                        </form>   {% endcomment %}
+                        
+					</div>
+				</div>
+				<div class="col-md-9 col-sm-8 col-xs-12">
+					<div class="main_category_right">
+						<div class="row">
+                            {% for product in products %}
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="main_cat_item">
+                                        <div class="item">
+                                            <div class="item-img">
+                                                <img src="{{ product.image.url }}" style="width:250px; height:150px" alt="" />
+                                            </div>
+                                            <div class="item-sub">
+                                                <a href="{{ product.get_absolute_url }}"><h5>{{ product.name }}</h5></a>
+                                                <div class="portfolio-item__cat">
+                                                    <a href="{{ product.get_absolute_url }}">{{ product.brand }}</a>
+                                                    <span>|</span>
+                                                    <span></span>
+                                                    <a href="{{ product.get_absolute_url }}">{{ product.type }}</a>
+                                                </div><!-- /.portfolio-cat -->                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+						</div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="pagi_ul">
+									<ul id="pagination">
+                                        {% if products.has_previous %}
+                                            <li><a href="?page={{ products.previous_page_number }}&{{ url_data }}">Previous</a></li>
+                                            <li><a href="?page={{ products.previous_page_number }}&{{ url_data }}">{{ products.previous_page_number }}</a></li>
+                                        {% endif %}
+										<li ><a style='background-color:#fdb900' href="?page={{ products.number }}&{{ url_data }}">{{ products.number }}</a></li>
+
+                                        {% if products.has_next %}
+                                            <li><a href="?page={{ products.next_page_number }}&{{ url_data }}">{{ products.next_page_number }}</a></li>
+                                            <li><a href="?page={{ products.next_page_number }}&{{ url_data }}">Next</a></li>
+                                        {% endif %}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+{% endblock body %}
+
+{% block front_js %}
+
+        <!-- JS Files -->
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script>
+            $(function() {
+                $( "#slider-range" ).slider({
+                range: true,
+                min: 150,
+                max: 1500,
+                values: [ 520, 1100 ],
+                slide: function( event, ui ) {
+                    $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                }
+                });
+                $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+                " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+            });
+        </script>
+        <script src="{% static "cart/js/owl.carousel.min.js"%}"></script>
+        <script src="{% static "cart/js/lightbox.min.js"%}"></script>
+        <script src="{% static "cart/js/jquery.elevatezoom.js"%}"></script>
+        <script src="{% static "cart/js/bootstrap-select.min.js"%}"></script>
+        <script src="{% static "cart/js/rs-plugin/js/jquery.themepunch.plugins.min.js"%}"></script>
+        <script src="{% static "cart/js/rs-plugin/js/jquery.themepunch.revolution.min.js"%}"></script>
+        <script src="{% static "cart/js/rs-plugin/rs.home.js"%}"></script>
+        <script src="{% static "cart/js/bootstrap.min.js"%}"></script>
+        <!--Opacity & Other IE fix for older browser-->
+        <!--[if lte IE 8]>
+            <script type="text/javascript" src="js/ie-opacity-polyfill.js"></script>
+        <![endif]-->
+        <script src="{% static "cart/js/main.js"%}"></script>
+
+{% endblock front_js %}

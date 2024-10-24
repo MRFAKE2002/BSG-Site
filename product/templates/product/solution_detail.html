@@ -1,0 +1,235 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Solution Detail
+
+{% endblock title %}
+
+{% block body %}
+
+    
+    <!-- ========================
+    page title 
+    =========================== -->
+    <section class="page-title page-title-layout7 bg-overlay bg-parallax text-center" style='padding-top:250px;padding-bottom:250px;'>
+        <div class="bg-img"><img src="{{ product.image.url }}" alt="background"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 offset-xl-3">
+                    <h1 class="pagetitle__heading mb-0">{{ product.name }}</h1>
+                </div><!-- /.col-xl-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.page-title -->
+
+    <!-- ======================
+    Text Content Section
+    ========================= -->
+    <section class="text-content-section pb-90">
+        <div class="container">
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <aside class="sidebar mb-30">
+                <div class="widget widget-categories">
+                    <h5 class="widget__title">Solutions</h5>
+                    <div class="widget-content">
+                    <ul class="list-unstyled">
+                        {% for solution in solutions %}
+                            <li><a href="#" {% if solution.id == product.id %}class="active" {% endif %}>{{ solution.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    </div><!-- /.widget-content -->
+                </div><!-- /.widget-categories -->
+                {% if product in cart %}
+                    your product in cart
+                {% else %}
+                    <div class="widget widget-contact bg-secondary">
+                        <form method="post" action="{% url 'cart:add_product_to_cart' %}">
+                            {% csrf_token %}
+                            <div class="widget-body">
+                                <input name='product_id' style="display:none;" class="btn btn__primary btn__block" value="{{ product.id }}" >
+                                <button type="submit" class="btn btn__primary btn__block">Add To Cart</button>
+                            </div><!-- /.widget-content -->
+                        </form>
+                    </div><!-- /.widget-contact -->
+                {% endif %}
+                {% comment %} 
+                    <div class="widget widget-download">
+                        <h5 class="widget__title">User Manual</h5>
+                        <div class="widget-body">
+                        <a href="#" class="btn btn__secondary btn__block mb-20">
+                            <span>Download</span>
+                            <img src="{% static "product/assets/images/icons/pdf.png"%}" alt="pdf">
+                        </a>
+                        </div><!-- /.widget-content -->
+                    </div><!-- /.widget-download --> 
+                {% endcomment %}
+                </aside><!-- /.sidebar -->
+            </div><!-- /.col-lg-4 -->
+            <div class="col-sm-12 col-md-12 col-lg-8">
+                {% comment %} 
+                    <h5 class="mb-40 font-italic">A leading developer of A grade commercial, industrial and residential
+                    projects in USA.
+                    Since foundation we doubled turnover year on year, with its staff numbers swelling accordingly.</h5>
+                {% endcomment %}
+                <!-- ======================
+                portfolio-gallery
+                ========================= -->
+                <section class="portfolio-gallery py-0">
+                    <div class="container">
+                        <div class="row">
+                            <!-- portfolio item -->
+                            {% for product_image in product_images %}
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="portfolio-item">
+                                        <div class="portfolio-item__img">
+                                        <a class="popup-gallery-item" href="{{ product_image.image.url }}">
+                                            <img src="{{ product_image.image.url }}" alt="portfolio img">
+                                        </a>
+                                        </div><!-- /.portfolio-img -->
+                                    </div><!-- /.portfolio-item -->
+                                </div><!-- /.col-lg-4 -->
+                            {% endfor %}
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </section>
+                <!-- /.portfolio gallery -->
+                
+                <div class="text__block mb-30">
+                <h5 class="text__block-title">Overview</h5>
+                <p class="text__block-desc">
+                    {{ product.description|linebreaks }}
+                </p>
+                </div><!-- /.text-block -->
+                <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="features-list mb-30">
+                    <div class="row">
+                        {% for content in product.product_contents.all %}    
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <div class="feature-list-item">
+                                    <div class="feature-item__content">
+                                    <h4 class="feature-item__title">{{ content.name }}</h4>
+                                    <p class="feature-item__desc">
+                                        {{ content.content|linebreaksbr }}
+                                    </p>
+                                    </div><!-- /.feature-content -->
+                                </div><!-- /.feature-item -->
+                            </div><!-- /.col-lg-6 -->
+                        {% endfor %}
+                    </div><!-- /.row -->
+                    </div><!-- /.features-list -->
+                </div><!-- /.col-lg-12 -->
+                </div>
+
+                {% comment %} 
+                    <div class="text__block">
+                        <h5 class="text__block-title">How It Works?!</h5>
+                        <p class="text__block-desc">We have more than twenty years of experience. During that time, we’ve become
+                        expert in freight transportation by air and all its related solutions. We work closely with all major
+                        airlines around the world. Ongoing negotiations ensure that we always have the cargo space we need and
+                        offer you competitive rates.</p>
+                    </div><!-- /.text-block -->
+
+                    <div class="video-banner mb-50">
+                        <img src="assets/images/banners/3.jpg" alt="banner">
+                        <a class="video__btn video__btn-white popup-video" href="https://www.youtube.com/watch?v=nrJtHemSPW4">
+                            <div class="video__player">
+                            <span class="video__player-animation"></span>
+                            <span class="video__player-animation video__player-animation-2"></span>
+                            <i class="fa fa-play"></i>
+                            </div>
+                            <span class="video__btn-title color-white">Watch Video!</span>
+                        </a>
+                    </div><!-- /.video -->
+
+                    <h5 class="fz-25 mt-20">Key Benifits</h5>
+                    <div id="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-item__header" data-toggle="collapse" data-target="#collapse1">
+                        <a class="accordion-item__title" href="#">Which Plan Is Right For Me?</a>
+                        </div><!-- /.accordion-item-header -->
+                        <div id="collapse1" class="collapse" data-parent="#accordion">
+                        <div class="accordion-item__body">
+                            <p>With any financial product that you buy, it is important that you know you are getting the best
+                            advice from a reputable company as often</p>
+                        </div><!-- /.accordion-item-body -->
+                        </div>
+                    </div><!-- /.accordion-item -->
+                    <div class="accordion-item">
+                        <div class="accordion-item__header" data-toggle="collapse" data-target="#collapse2">
+                        <a class="accordion-item__title" href="#">Do I have to commit to a contract?</a>
+                        </div><!-- /.accordion-item-header -->
+                        <div id="collapse2" class="collapse" data-parent="#accordion">
+                        <div class="accordion-item__body">
+                            <p>With any financial product that you buy, it is important that you know you are getting the best
+                            advice from a reputable company as often</p>
+                        </div><!-- /.accordion-item-body -->
+                        </div>
+                    </div><!-- /.accordion-item -->
+                    <div class="accordion-item opened">
+                        <div class="accordion-item__header" data-toggle="collapse" data-target="#collapse3">
+                        <a class="accordion-item__title" href="#">What Payment Methods Are Available?</a>
+                        </div><!-- /.accordion-item-header -->
+                        <div id="collapse3" class="collapse show" data-parent="#accordion">
+                        <div class="accordion-item__body">
+                            <p>With any financial product that you buy, it is important that you know you are getting the best
+                            advice from a reputable company as often</p>
+                        </div><!-- /.accordion-item-body -->
+                        </div>
+                    </div><!-- /.accordion-item -->
+                    </div><!-- /.accordion --> 
+                {% endcomment %}
+            </div><!-- /.col-lg-8 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.Text Content Section -->
+
+    <!-- =========================== 
+    portfolio carousel 
+    ============================= -->
+    <section class="portfolio-carousel pb-60">
+        <div class="container">
+            <div class="row align-items-center mb-20">
+            <div class="col-sm-12 col-md-12 col-lg-5">
+                <h3 class="heading__title mb-20">Related Products & Services</h3>
+            </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="slick-carousel" id="filter-carousel"
+                data-slick='{"slidesToShow": 4, "arrows": false, "dots": true, "responsive": [ {"breakpoint": 992, "settings": {"slidesToShow": 2}}, {"breakpoint": 768, "settings": {"slidesToShow": 1}}]}'>
+                {% for product in similar_products %}
+                <!-- portfolio item #1 -->
+                    <div class="portfolio-item Construction all">
+                        <div class="portfolio-item__img">
+                        <img src="{{ product.image.url }}" style='height:250px' alt="portfolio img">
+                        </div><!-- /.portfolio-img -->
+                        <div class="portfolio-item__hover">
+                        <div class="portfolio-item__content">
+                            <h4 class="portfolio-item__title"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h4>
+                            <div class="portfolio-item__cat">
+                            <a href="{{ product.get_absolute_url }}">{{ product.brand }}</a><a href="{{ product.get_absolute_url }}">{{ product.type }}</a>
+                            </div><!-- /.portfolio-cat -->
+                        </div><!-- /.portfolio-content -->
+                        </div><!-- /.portfolio-item__hover -->
+                    </div><!-- /.portfolio-item -->
+                {% endfor %}
+                </div><!-- /.carousel -->
+            </div><!-- /.col-lg-12 -->
+            </div><!-- /.row -->
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-end">
+                <a href="{% url 'product:product_list' %}" class="btn btn__link btn__loadMore">
+                <span class="mr-2">Explore All Projects</span> <i class="icon-arrow-right1"></i>
+                </a>
+            </div><!-- /.col-lg-12 -->
+            </div>
+        </div><!-- /.container -->
+    </section><!-- /.portfolio carousel -->
+
+
+{% endblock body %}

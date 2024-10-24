@@ -1,0 +1,69 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+    <!-- ========================
+       page title 
+    =========================== -->
+    <section class="page-title page-title-layout8 bg-overlay bg-parallax text-center">
+        <div class="bg-img"><img src="{% static 'blog/assets/images/page-titles/9.jpg'%}" alt="background"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 offset-xl-3">
+              <h1 class="pagetitle__heading">Latest News</h1>
+              <nav>
+                <ol class="breadcrumb justify-content-center mb-0">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">News</li>
+                </ol>
+              </nav>
+            </div><!-- /.col-xl-6 -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section><!-- /.page-title -->
+  
+<section class="blog-grid">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Item #1 -->
+            {% for article in articles %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="post-item">
+                        <div class="post-item__img">
+                            <a href="{% url 'Blog:article_detail' article.slug %}">
+                                <img src="{{article.thumbnail.url}}" alt="blog image">
+                            </a>
+                            <div class="post-item__meta__cat">
+                                <a href="#">Construction</a>
+                            </div><!-- /.blog-meta-cat -->
+                        </div><!-- /.blog-img -->
+                        <div class="post-item__content">
+                            <span class="post-item__meta__date">Jan 20, 2020</span>
+                            <h4 class="post-item__title"><a href="{% url 'Blog:article_detail' article.slug %}">{{article.title}}</a>
+                            </h4>
+                            <p class="post-item__desc"> {{article.description|truncatewords:20}}
+                            </p>
+                            <a href="{% url 'Blog:article_detail' article.slug %}" class="btn btn__secondary btn__link">
+                                <i class="icon-arrow-right1"></i>
+                                <span>Read More</span>
+                            </a>
+                        </div><!-- /.blog-content -->
+                    </div><!-- /.post-item -->
+                </div><!-- /.col-lg-4 -->
+            {% endfor %}
+      
+    </div><!-- /.col-lg-4 -->
+</div><!-- /.row -->
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+        <nav class="pagination-area">
+            <ul class="pagination justify-content-center">
+                <li><a class="current" href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#"><i class="icon-arrow-right1"></i></a></li>
+            </ul>
+        </nav><!-- .pagination-area -->
+    </div><!-- /.col-lg-12 -->
+</div><!-- /.row -->
+</div><!-- /.container -->
+</section>
+{% endblock %}

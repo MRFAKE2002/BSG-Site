@@ -1,0 +1,293 @@
+{% load static %}
+
+    <!-- =========================
+        Header
+    =========================== -->
+    <header class="header header-layout2">
+        <nav class="navbar navbar-expand-lg">
+            <div class="navbar__bottom sticky-navbar">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <a class="navbar-brand" href="{% url 'pages:home' %}" style="width: inherit; padding: 10px; margin: -24px">
+                        <img src="{% static "product/assets/images/logo/logo-light.jpg"%}" style='margin-left:-30px' class="logo-dark" alt="logo">
+                    </a>
+                <ul class="navbar-nav" style="padding-left: 40px; padding-top:10px;">
+                    <li class="nav__item">
+                        <a href="{% url 'pages:home' %}" style='line-height:90px' class="nav__item-link">Home</a>
+                    </li><!-- /.nav-item -->
+                    {% comment %} 
+                        <i data-toggle="dropdown" class="fa fa-angle-down d-block d-lg-none"></i>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="index.html" class="nav__item-link">Home Main</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="home-classic.html" class="nav__item-link">Home Classic</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="home-architecture.html" class="nav__item-link">Home architecture</a>
+                            </li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                        </li><!-- /.nav-item --> 
+                    {% endcomment %}
+
+                    {% comment %} 
+                        <i data-toggle="dropdown" class="fa fa-angle-down d-block d-lg-none"></i>
+                        <ul class="dropdown-menu">
+                            <a href="about-us.html" class="dropdown-toggle nav__item-link">Company</a>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="core-values.html" class="nav__item-link">core values</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="leadership-team.html" class="nav__item-link">Leadership Team</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="pricing.html" class="nav__item-link">Pricing & Plans</a>
+                            </li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="faqs.html" class="nav__item-link">Help & FAQs</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="careers.html" class="nav__item-link">careers</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                        </li><!-- /.nav-item --> 
+                    {% endcomment %}
+                    <li class="nav__item">
+                        <a href="{% url 'product:product_list' %}" style='line-height:90px' class="nav__item-link">Services & Products</a>
+                    </li><!-- /.nav-item -->
+                    {% comment %} 
+                        <i data-toggle="dropdown" class="fa fa-angle-down d-block d-lg-none"></i>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Construction
+                                Manager</a></li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Construction
+                                Consultants</a></li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Architecture &
+                                Building</a></li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Home
+                                Renovations</a></li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Tiling &
+                                Painiting</a></li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Interior
+                                Design</a></li><!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                        </li><!-- /.nav-item --> 
+                    {% endcomment %}
+                    <li class="nav__item">
+                        <a href="{% url 'blog:article_list' %}" style='line-height:90px' class="nav__item-link">Blog</a>
+                    </li><!-- /.nav-item -->
+                    {% comment %} 
+                        <i data-toggle="dropdown" class="fa fa-angle-down d-block d-lg-none"></i>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="projects-grid.html" class="nav__item-link">Projects Grid</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="projects-standard.html" class="nav__item-link">Projects Standard</a>
+                            </li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="projects-carousel.html" class="nav__item-link">Projects Carousel</a>
+                            </li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="projects-single-project.html" class="nav__item-link">Single
+                                Project</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                        </li><!-- /.nav-item --> 
+                        <li class="nav__item with-dropdown">
+                        <a href="blog.html" class="dropdown-toggle nav__item-link">News</a>
+                        <i data-toggle="dropdown" class="fa fa-angle-down d-block d-lg-none"></i>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="blog.html" class="nav__item-link">blog grid</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="blog-single-post.html" class="nav__item-link">blog single post</a>
+                            </li><!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                        </li><!-- /.nav-item -->
+                    {% endcomment %}
+
+                    <li class="nav__item">
+                    <a href="{% url 'pages:oneweb-preorder' %}" style='line-height:90px' class="nav__item-link">OnWeb Pre-Order</a>
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item">
+                        <a href="{% url 'pages:about_us' %}" style='line-height:90px' class="nav__item-link">About Us</a>
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item">
+                        <a href="{% url 'pages:contact_us' %}" style='line-height:90px' class="nav__item-link">Contact Us</a>
+                    </li><!-- /.nav-item -->
+                    <a href="{% url 'cart:cart_details'%}" style='margin:20px;' class="btn btn__secondary header__btn">
+                        <img src="{% static "product/assets/images/icons/bag.png"%}" alt="Bag" />
+                        cart: 
+                        {{ cart|length }}
+                        items
+                    </a>
+                </ul><!-- /.navbar-nav -->
+                {% comment %} 
+                    </div><!-- /.navbar-collapse -->
+                    <div class="header-actions d-none d-lg-block">
+                    <ul class="header-actions__list list-unstyled d-flex align-items-center mb-0">
+                        <li class="dropdown">
+                        <button class="dropdown-toggle" id="langDrobdown" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="icon-globe mr-1"></i> <span>English</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="langDrobdown">
+                            <a class="dropdown-item" href="#">Arabic</a>
+                            <a class="dropdown-item" href="#">germany</a>
+                        </div>
+                        </li>
+                        <li>
+                        <form class="header-search__form">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <button class="header-search__btn"><i class="fa fa-search"></i></button>
+                        </form>
+                        </li>
+                    </ul>
+                    </div><!-- /.header-actions --> 
+                {% endcomment %}
+            </div><!-- /.container -->
+            </div><!-- /.navbar-bottom -->
+        </nav><!-- /.navabr -->
+    </header><!-- /.Header --> 
+
+    {% comment %} 
+        <!-- =========================
+            Header
+        =========================== -->
+        <header class="header header-layout2">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo/logo-dark.png" class="logo-dark" alt="logo">
+                </a>
+                <div class="header-topbar d-none d-lg-block">
+                    <div class="d-flex flex-wrap">
+                    <ul class="header-topbar__contact d-flex flex-wrap list-unstyled mb-0">
+                        <li>
+                        <i class="icon-phone1"></i>
+                        <div><span>Call Us:</span><strong><a href="tel:+5565454117">+55 654 541 17</a></strong></div>
+                        </li>
+                        <li>
+                        <i class="icon-envelope1"></i>
+                        <div><span>Email Us:</span><strong><a href="mailto:Amarou@7oroof.com">Amarou@7oroof.com</a></strong>
+                        </div>
+                        </li>
+                        <li>
+                        <i class="icon-clock1"></i>
+                        <div><span>Opening Hours:</span><strong>Mon-Fri: 8am – 7pm</strong></div>
+                        </li>
+                    </ul>
+                    <a href="request-quote.html" class="btn btn__secondary header__btn">
+                        <i class="icon-arrow-right1"></i><span>Get A Quote</span>
+                    </a>
+                    </div>
+                </div><!-- /.header-topbar -->
+                <button class="navbar-toggler" type="button">
+                    <span class="menu-lines"><span></span></span>
+                </button>
+                </div><!-- /.container -->
+                <div class="navbar__bottom sticky-navbar">
+                <div class="container">
+                    <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav">
+                        <li class="nav__item with-dropdown">
+                        <a href="index.html" class="dropdown-toggle nav__item-link">Home</a>
+                        <i data-toggle="dropdown" class="fa fa-angle-down d-block d-lg-none"></i>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="index.html" class="nav__item-link">Home Main</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="home-classic.html" class="nav__item-link">Home Classic</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="home-architecture.html" class="nav__item-link">Home architecture</a>
+                            </li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                        </li><!-- /.nav-item -->
+                        <li class="nav__item with-dropdown">
+                        <a href="about-us.html" class="dropdown-toggle nav__item-link">Company</a>
+                        <i data-toggle="dropdown" class="fa fa-angle-down d-block d-lg-none"></i>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="about-us.html" class="nav__item-link">About Us</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="core-values.html" class="nav__item-link">core values</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="leadership-team.html" class="nav__item-link">Leadership Team</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="pricing.html" class="nav__item-link">Pricing & Plans</a>
+                            </li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="faqs.html" class="nav__item-link">Help & FAQs</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="careers.html" class="nav__item-link">careers</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                        </li><!-- /.nav-item -->
+                        <li class="nav__item with-dropdown">
+                        <a href="services.html" class="dropdown-toggle nav__item-link">Services</a>
+                        <i data-toggle="dropdown" class="fa fa-angle-down d-block d-lg-none"></i>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Construction
+                                Manager</a></li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Construction
+                                Consultants</a></li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Architecture &
+                                Building</a></li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Home
+                                Renovations</a></li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Tiling &
+                                Painiting</a></li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="services-single-service.html" class="nav__item-link">Interior
+                                Design</a></li><!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                        </li><!-- /.nav-item -->
+                        <li class="nav__item with-dropdown">
+                        <a href="projects-grid.html" class="dropdown-toggle nav__item-link">Projects</a>
+                        <i data-toggle="dropdown" class="fa fa-angle-down d-block d-lg-none"></i>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="projects-grid.html" class="nav__item-link">Projects Grid</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="projects-standard.html" class="nav__item-link">Projects Standard</a>
+                            </li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="projects-carousel.html" class="nav__item-link">Projects Carousel</a>
+                            </li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="projects-single-project.html" class="nav__item-link">Single
+                                Project</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                        </li><!-- /.nav-item -->
+                        <li class="nav__item with-dropdown">
+                        <a href="blog.html" class="dropdown-toggle nav__item-link">News</a>
+                        <i data-toggle="dropdown" class="fa fa-angle-down d-block d-lg-none"></i>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="blog.html" class="nav__item-link">blog grid</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="blog-single-post.html" class="nav__item-link">blog single post</a>
+                            </li><!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                        </li><!-- /.nav-item -->
+                        <li class="nav__item">
+                        <a href="contact-us.html" class="nav__item-link active">Contact Us</a>
+                        </li><!-- /.nav-item -->
+                    </ul><!-- /.navbar-nav -->
+                    </div><!-- /.navbar-collapse -->
+                    <div class="header-actions d-none d-lg-block">
+                    <ul class="header-actions__list list-unstyled d-flex align-items-center mb-0">
+                        <li class="dropdown">
+                        <button class="dropdown-toggle" id="langDrobdown" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="icon-globe mr-1"></i> <span>English</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="langDrobdown">
+                            <a class="dropdown-item" href="#">Arabic</a>
+                            <a class="dropdown-item" href="#">germany</a>
+                        </div>
+                        </li>
+                        <li>
+                        <form class="header-search__form">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <button class="header-search__btn"><i class="fa fa-search"></i></button>
+                        </form>
+                        </li>
+                    </ul>
+                    </div><!-- /.header-actions -->
+                </div><!-- /.container -->
+                </div><!-- /.navbar-bottom -->
+            </nav><!-- /.navabr -->
+        </header><!-- /.Header --> 
+    {% endcomment %}

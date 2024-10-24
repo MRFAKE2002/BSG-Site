@@ -1,0 +1,87 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Blog
+
+{% endblock title %}
+
+{% block body %}
+    <!-- ========================
+        page title 
+    =========================== -->
+    <section class="page-title page-title-layout8 bg-overlay bg-parallax text-center" style='padding-top:200px;padding-bottom:200px;'>
+        <div class="bg-img"><img src="{% static 'product/assets/images/page-titles/Blog-Cover.jpg'%}" alt="background"></div>
+        <div class="container">
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 offset-xl-3">
+                <h1 class="pagetitle__heading" style='font-size:43px'>ATHENA | Eutelsat-OneWeb</h1>
+                <nav>
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Articles</li>
+                </ol>
+                </nav>
+            </div><!-- /.col-xl-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.page-title -->
+
+    <!-- ======================
+    Blog Grid
+    ========================= -->
+    <section class="blog-grid">
+        <div class="container">
+            <div class="row">
+                <!-- Blog Item #1 -->
+                {% for article in articles %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="post-item">
+                            <div class="post-item__img">
+                                <a href="{{ article.get_absolute_url }}">
+                                    <img src="{{ article.thumbnail.url }}" alt="blog image">
+                                </a>
+                                <div class="post-item__meta__cat">
+                                    <a href="#">{{ article.category_to_str }}</a>
+                                </div><!-- /.blog-meta-cat -->
+                                </div><!-- /.blog-img -->
+                                <div class="post-item__content">
+                                <span class="post-item__meta__date">{{ article.publish }}</span>
+                                <h4 class="post-item__title"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+                                </h4>
+                                <p class="post-item__desc">
+                                    {{ article.description|safe|truncatewords_html:10 }}
+                                </p>
+                                <a href="{{ article.get_absolute_url }}" class="btn btn__secondary btn__link">
+                                    <i class="icon-arrow-right1"></i>
+                                    <span>Read More</span>
+                                </a>
+                            </div><!-- /.blog-content -->
+                        </div><!-- /.post-item -->
+                    </div><!-- /.col-lg-4 -->
+                {% endfor %}
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <nav class="pagination-area">
+                    <ul class="pagination justify-content-center">
+                    {% if articles.has_previous %}
+                        <li><a href="?page={{ articles.previous_page_number }}&{{ url_data }}">Previous</a></li>
+                        <li><a href="?page={{ articles.previous_page_number }}&{{ url_data }}">{{ articles.previous_page_number }}</a></li>
+                    {% endif %}
+                    <li ><a style='background-color:#fdb900' href="?page={{ articles.number }}&{{ url_data }}">{{ articles.number }}</a></li>
+
+                    {% if articles.has_next %}
+                        <li><a href="?page={{ articles.next_page_number }}&{{ url_data }}">{{ articles.next_page_number }}</a></li>
+                        <li><a href="?page={{ articles.next_page_number }}&{{ url_data }}">Next</a></li>
+                    {% endif %}
+                    </ul>
+                </nav><!-- .pagination-area -->
+                </div><!-- /.col-lg-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.blog Grid -->
+
+{% endblock %}

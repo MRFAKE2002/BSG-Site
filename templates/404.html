@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    404
+
+{% endblock title %}
+
+{% block body %}
+
+    <section class="error_not_found_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="error_not_found">
+                        <img src="{% static "cart/images/not_found.png" %}" alt="" />
+                        <h2>Ohh! Page Not Found</h2>
+                        <p>This file May Have Been Moved or Deleted. Be Sure to Check Your Spelling.</p>
+                        Search Again!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock body %}

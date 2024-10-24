@@ -1,0 +1,117 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+    Contact Us
+
+{% endblock title %}
+
+{% block header %}
+    
+    {% include "header.html" %}
+
+{% endblock header %}
+
+{% block body %}
+
+    <!-- ==========================
+    Contact Info
+    ============================ -->
+    <section class="contact-info pb-70">
+        <div class="container">
+            <div class="row">
+                <!-- Contact panel #1 -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="contact-info-box">
+                    <div class="contact__info-img">
+                        <img src="{% static "product/assets/images/features/Churchill-Building-4.jpg"%}" alt="features">
+                    </div>
+                    <h4 class="contact__info-box-title">Dubai Office</h4>
+                    <ul class="contact__info-list list-unstyled">
+                        <li>Email: <a href="mailto:info@athenatelecom.ae">info@athenatelecom.ae</a></li>
+                        <li>Address:Office 3315, Churchill Executive Tower, Business Bay, Dubai-UAE.</li>
+                        <li>Phone: <a href="tel:+97145541775">+97145541775</a></li>
+                    </ul><!-- /.contact__info-list -->
+                </div><!-- /.contact-info-box -->
+                </div><!-- /.col-lg-4 -->
+                <!-- Contact panel #1 -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="contact-info-box">
+                    <div class="contact__info-img">
+                        <img src="{% static "product/assets/images/about/Nima-Baheri-Photo-1_web.jpg"%}" style="height: 438px;" alt="features">
+                    </div>
+                    <h4 class="contact__info-box-title">Management</h4>
+                    <ul class="contact__info-list list-unstyled">
+                        <li>Email: <a href="mailto:nima@athenatelecom.ae">nima@athenatelecom.ae</a></li>
+                        <li>Phone: 
+                            <a href="tel:+971508792341">+971508792341</a>
+                            |
+                            <a href="tel:+18154564747">+18154564747</a>
+                        </li>
+                        <h4 class="contact__info-box-title">Sales</h4>
+                        <li>Email: <a href="mailto:sales@athenatelecom.ae">sales@athenatelecom.ae</a></li>
+                        </ul><!-- /.contact__info-list -->
+                </div><!-- /.contact-info-box -->
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.Contact Info -->
+
+    <!-- ==========================
+        contact layout 1
+    =========================== -->
+    <section class="contact-layout1 py1">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="contact-panel">
+                    <form class="contact-panel__form" method="post" action="#" id="contactForm">
+                        <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="contact-panel__title">Get In Touch</h4>
+                            <p class="contact-panel__desc mb-40">Complete control over products allows us to ensure our
+                            customers receive the best quality prices and service. We take great pride in everything that we
+                            do in our company.</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group"><input type="text" class="form-control" placeholder="Name" id="contact-name"
+                                name="contact-name" required></div>
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group"><input type="email" class="form-control" placeholder="Email"
+                                id="contact-email" name="contact-email" required></div>
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            
+                            <div class="form-group">
+                            <textarea class="form-control" placeholder="Additional Details!" id="contact-messgae"
+                                name="contact-messgae" required></textarea>
+                            </div>
+                        </div><!-- /.col-lg-12 -->
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <button type="submit" class="btn btn__secondary btn__block ">Submit Request </button>
+                            <div class="contact-result"></div>
+                        </div><!-- /.col-lg-12 -->
+                        </div><!-- /.row -->
+                    </form>
+                    </div><!-- /.contact__panel -->
+                </div><!-- /.col-lg-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.contact layout 1 -->
+
+    <!-- ========================= 
+            Google Map
+    =========================  -->
+    <section class="google-map p-0 mt--120">
+        <div id="map" style="height: 440px;"></div>
+        <script src="{% static "product/assets/js/google-map.js"%}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqrqPZOVegy1VIdyIcndxZY9YGoK-x0Yo&callback=initMap"
+            async defer>
+        </script>
+    </section><!-- /.GoogleMap -->
+
+
+{% endblock body %}

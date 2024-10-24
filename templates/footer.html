@@ -1,0 +1,125 @@
+{% load static %}
+
+<!-- ========================
+    Footer
+========================== -->
+<footer class="footer">
+    {% comment %} <div class="footer-contact">
+        <div class="container">
+            <div class="row">
+                <div class="offset-lg-4 col-sm-12 col-md-12 col-lg-8 d-flex flex-wrap justify-content-between">
+                <div class="footer-contact__item d-flex align-items-center">
+                    <div class="footer-contact__icon">
+                    <i class="icon-phone1"></i>
+                    </div><!-- /.footer-contact__icon -->
+                    <div class="footer-contact__text">
+                    <span>Call Us:</span>
+                    <strong><a href="tel:00123968574">(002) 123968574</a></strong>
+                    </div><!-- /.footer-contact__text -->
+                </div><!-- /.footer-contact__item -->
+                <div class="footer-contact__item d-flex align-items-center">
+                    <div class="footer-contact__icon">
+                    <i class="icon-envelope1"></i>
+                    </div><!-- /.footer-contact__icon -->
+                    <div class="footer-contact__text">
+                    <span>Email Us:</span>
+                    <strong><a href="mailto:Eteon@7oroof.com">Eteon@7oroof.com</a></strong>
+                    </div><!-- /.footer-contact__text -->
+                </div><!-- /.footer-contact__item -->
+                <div class="footer-contact__item d-flex align-items-center">
+                    <div class="footer-contact__icon">
+                    <i class="icon-clock1"></i>
+                    </div><!-- /.footer-contact__icon -->
+                    <div class="footer-contact__text">
+                    <span>Opening Hours:</span>
+                    <strong>Mon-Fri: 8am – 7pm</strong>
+                    </div><!-- /.footer-contact__text -->
+                </div><!-- /.footer-contact__item -->
+                </div><!-- /.col-lg-8 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.footer-contact --> {% endcomment %}
+    <div class="footer-primary bg-primary">
+        <div class="container">
+        <div class="row">
+            {% comment %} <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 footer-widget footer-widget__newsletter">
+            <form class="footer-widget__newsletter__form">
+                <i class="footer-widget__newsletter__icon icon-brush"></i>
+                <h6 class="footer-widget__newsletter__title">Sign Up For Industry Alerts, News & insights</h6>
+                <div class="form-group mb-0">
+                <input type="text" class="form-control" placeholder="Your Email Address">
+                <button type="submit" class="btn btn__primary">Subscribe</button>
+                </div>
+            </form>
+            </div><!-- /.col-xl-4 -->
+            {% endcomment %}
+            <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 footer-widget">
+            <h6 class="footer-widget__title">Eteon Constructions</h6>
+            <div class="footer-widget-body">
+                <p class="mb-20">A leading developer of A-grade commercial, industrial and residential projects in USA.
+                Since its foundation the company has doubled its turnover year on year with its staff.</p>
+                <a href="{% url 'pages:contact_us' %}" class="btn btn__primary btn__link btn__icon">
+                <i class="icon-arrow-right1"></i><span>Request A Quote</span>
+                </a>
+            </div><!-- /.footer-widget-body -->
+            </div><!-- /.col-xl-2 --> 
+            <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2 footer-widget footer-widget-nav">
+            <h6 class="footer-widget__title">Links</h6>
+            <div class="footer-widget-body">
+                <nav>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'pages:about_us' %}">About Us</a></li>
+                    {% comment %} <li><a href="leadership-team.html">Meet Our Team</a></li> {% endcomment %}
+                    <li><a href="{% url 'blog:article_list' %}">News & Articles</a></li>
+                    <li><a href="{% url 'product:product_list' %}">Our Products</a></li>
+                    {% comment %} <li><a href="careers.html">Careers</a></li> {% endcomment %}
+                </ul>
+                </nav>
+            </div><!-- /.footer-widget-body -->
+            </div><!-- /.col-xl-2 -->
+            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 footer-widget">
+            <h6 class="footer-widget__title">Quick Contact</h6>
+            <div class="footer-widget-body">
+                <p>Office 3315, Churchill Executive Tower, Business Bay, Dubai-UAE.</p>
+                <p>If you have any questions or need help, feel free to contact with our team.</p>
+                <p class="footer-contact__phone d-flex align-items-center">
+                <i class="icon-phone1"></i>
+                <i><a href="tel:+97145541775">+97145541775</a></i>
+                <i><a href="tel:+971508792341">+971508792341</a></i>
+                <a href="tel:+18154564747">+18154564747</a>
+                </p>
+            </div><!-- /.footer-widget-body -->
+            </div><!-- /.col-xl-4 -->
+        </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.footer-primary -->
+    <div class="footer-secondary">
+        <div class="container">
+        <div class="row align-items-center">
+            <div class="col-sm-12 col-md-12 col-lg-8 d-flex flex-wrap align-items-center">
+            <img src="{% static "product/assets/images/favicon/footer.jpg"%}" style="max-width:190px;" alt="logo" class="mr-20">
+            <nav>
+                {% comment %} 
+                    <ul class="footer__copyright-links list-unstyled d-flex flex-wrap mb-0">
+                    <li><a href="#">Terms & Conditions </a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Employee login</a></li>
+                    </ul> 
+                {% endcomment %}
+                <p class="mb-0"> Copyright, 2023 Athena Telecommunications LLC. All right reserved.
+                </p>
+            </nav>
+            </div><!-- /.col-lg-8 -->
+            <div class="col-sm-12 col-md-12 col-lg-4">
+            <ul class="social__icons list-unstyled justify-content-end mb-0">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            </ul><!-- /.social-icons -->
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.footer-secondary -->
+</footer><!-- /.Footer -->
+<button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
